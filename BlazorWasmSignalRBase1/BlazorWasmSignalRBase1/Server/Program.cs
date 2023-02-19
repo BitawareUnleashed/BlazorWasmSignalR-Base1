@@ -11,8 +11,8 @@ builder.Services.AddSignalR();
 
 builder.Services.AddSingleton<WatchWorker>();
 var app = builder.Build();
-app.Services.GetRequiredService<WatchWorker>().SetHub("https://localhost:7012/communicationhub");
-app.Services.GetRequiredService<WatchWorker>().ExecuteAsync(new CancellationToken());
+
+app.Services.GetRequiredService<WatchWorker>().ExecuteAsync("https://localhost:7012/communicationhub",new CancellationToken());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

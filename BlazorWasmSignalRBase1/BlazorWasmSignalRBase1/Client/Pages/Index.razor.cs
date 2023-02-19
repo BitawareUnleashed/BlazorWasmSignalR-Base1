@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.SignalR.Client;
+﻿using Microsoft.AspNetCore.SignalR.Client;
 
 namespace BlazorWasmSignalRBase1.Client.Pages;
 
@@ -20,10 +19,6 @@ public partial class Index
             StateHasChanged();
         });
         await hubConnection.StartAsync();
-
-
-        //notificationService = new NotificationService(NavigationManager, Http);
-        //_ = notificationService.InitializeNotifications();
     }
 }
 
