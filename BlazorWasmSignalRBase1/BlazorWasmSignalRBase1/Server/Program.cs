@@ -1,6 +1,5 @@
 using BlazorWasmSignalRBase1.Server.Models.Hubs;
 using BlazorWasmSignalRBase1.Server.Workers;
-using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +11,7 @@ builder.Services.AddSignalR();
 builder.Services.AddSingleton<WatchWorker>();
 var app = builder.Build();
 
+// Add worker for clock
 app.Services.GetRequiredService<WatchWorker>().ExecuteAsync("https://localhost:7012/communicationhub",new CancellationToken());
 
 // Configure the HTTP request pipeline.
