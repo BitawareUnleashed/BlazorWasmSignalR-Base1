@@ -12,7 +12,7 @@ builder.Services.AddSingleton<WatchWorker>();
 var app = builder.Build();
 
 // Add worker for clock
-app.Services.GetRequiredService<WatchWorker>().ExecuteAsync("https://localhost:7012/communicationhub",new CancellationToken());
+app.Services.GetRequiredService<WatchWorker>().ExecuteAsync("https://localhost:7012/communicationhub", new CancellationToken());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
